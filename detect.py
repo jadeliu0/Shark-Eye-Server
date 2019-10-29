@@ -19,6 +19,8 @@ def getDetectionResult(filePath):
     detFilePath = os.path.join(basedir, 'detect/' + detFileName)
     detFile = open(detFilePath, 'r')
     label = detFile.readlines()[1].split('\t')[-1]
+    # remove everthing in the detect folder
+    os.remove(detFile)
     print "label is " +label
      
     return outputVideoPath, label
