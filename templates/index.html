@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{url_for('css_static', filename='style.css')}}">
+</head>
+<body>
+<form id="loginform", method="post" enctype:"multipart/form-data">
+    <label for="text">username: </label>
+    <input name="text" id="username" name=username required minlength="4" maxlength="50" size="25">
+    <input name="text" id="password" name=password required minlength="4" maxlength="50" size="25">
+    <button id="submit", type="button">login</button>
+</form>
+<form id="uploadform" method="post" enctype="multipart/form-data">
+    <label for="file">Select a file</label>
+    <input name="file" type="file">
+    <button id="submit" type="button">Upload</button>
+</form>
+<p>Result Filename:&nbsp;<span id="resultFilename"> here</span></p>
+<p>Result Filesize:&nbsp;<span id="resultFilesize"> here</span></p>
+
+<form id="detectform" method="post" enctype="multipart/form-data">
+    <label for="text">s3 url here: </label>
+    <input type="text" id="s3url" name="s3url" required
+       minlength="10" maxlength="100" size="30">
+    <button id="detect" type="button">Detect</button>
+</form>
+<p>Result URL:&nbsp;<span id="resultDetection"> here</span></p>
+<p>Type:&nbsp;<span id="resultType"> here</span></p>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="{{url_for('js_static', filename='app.js')}}"></script>
+</body>
+</html>
+
